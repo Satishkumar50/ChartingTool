@@ -1,0 +1,445 @@
+{
+  "tabs": [
+    "US",
+    "NSE India",
+    "Crypto",
+    "Global"
+  ],
+  "active": "US",
+  "tabData": {
+    "US": {
+      "sections": [
+        {
+          "collapsed": true,
+          "items": [
+            {
+              "name": "NASDAQ-100",
+              "source": "yfinance_us",
+              "symbol": "^NDX"
+            },
+            {
+              "name": "Invesco QQQ Trust, Series 1",
+              "source": "yfinance_us",
+              "symbol": "QQQ"
+            },
+            {
+              "name": "Invesco NASDAQ 100 ETF",
+              "source": "yfinance_us",
+              "symbol": "QQQM"
+            },
+            {
+              "name": "S&P 500",
+              "source": "yfinance_us",
+              "symbol": "^GSPC"
+            },
+            {
+              "name": "Dow Jones Industrial Average",
+              "source": "yfinance_us",
+              "symbol": "^DJI"
+            },
+            {
+              "name": "NASDAQ Composite",
+              "source": "yfinance_us",
+              "symbol": "^IXIC"
+            },
+            {
+              "name": "Russell 2000",
+              "source": "yfinance_us",
+              "symbol": "^RUT"
+            },
+            {
+              "name": "CBOE Volatility Index",
+              "source": "yfinance_us",
+              "symbol": "^VIX"
+            }
+          ],
+          "name": "index"
+        },
+        {
+          "collapsed": true,
+          "items": [
+            {
+              "name": "State Street Technology Select",
+              "source": "yfinance_us",
+              "symbol": "XLK"
+            },
+            {
+              "name": "State Street Financial Select S",
+              "source": "yfinance_us",
+              "symbol": "XLF"
+            },
+            {
+              "name": "State Street Energy Select Sect",
+              "source": "yfinance_us",
+              "symbol": "XLE"
+            },
+            {
+              "name": "State Street Health Care Select",
+              "source": "yfinance_us",
+              "symbol": "XLV"
+            },
+            {
+              "name": "State Street Industrial Select",
+              "source": "yfinance_us",
+              "symbol": "XLI"
+            },
+            {
+              "name": "State Street Communication Serv",
+              "source": "yfinance_us",
+              "symbol": "XLC"
+            },
+            {
+              "name": "State Street Consumer Discretio",
+              "source": "yfinance_us",
+              "symbol": "XLY"
+            },
+            {
+              "name": "State Street Consumer Staples S",
+              "source": "yfinance_us",
+              "symbol": "XLP"
+            },
+            {
+              "name": "State Street Real Estate Select",
+              "source": "yfinance_us",
+              "symbol": "XLRE"
+            },
+            {
+              "name": "State Street Materials Select S",
+              "source": "yfinance_us",
+              "symbol": "XLB"
+            },
+            {
+              "name": "State Street Utilities Select S",
+              "source": "yfinance_us",
+              "symbol": "XLU"
+            }
+          ],
+          "name": "SECTOR ETF"
+        },
+        {
+          "collapsed": false,
+          "items": [
+            {
+              "name": "Microsoft Corporation",
+              "source": "yfinance_us",
+              "symbol": "MSFT"
+            },
+            {
+              "name": "Rocket Lab Corporation",
+              "source": "yfinance_us",
+              "symbol": "RKLB"
+            },
+            {
+              "name": "Micron Technology, Inc.",
+              "source": "yfinance_us",
+              "symbol": "MU"
+            },
+            {
+              "name": "SK hynix Inc. American Depositary Shares When Issued",
+              "source": "yfinance_us",
+              "symbol": "SKHYV"
+            },
+            {
+              "name": "NVIDIA Corporation",
+              "source": "yfinance_us",
+              "symbol": "NVDA"
+            },
+            {
+              "name": "Amazon.com, Inc.",
+              "source": "yfinance_us",
+              "symbol": "AMZN"
+            },
+            {
+              "name": "Space Exploration Technologies",
+              "source": "yfinance_us",
+              "symbol": "SPCX"
+            },
+            {
+              "name": "Alphabet Inc.",
+              "source": "yfinance_us",
+              "symbol": "GOOGL"
+            },
+            {
+              "name": "Tesla, Inc.",
+              "source": "yfinance_us",
+              "symbol": "TSLA"
+            },
+            {
+              "name": "Broadcom Inc.",
+              "source": "yfinance_us",
+              "symbol": "AVGO"
+            },
+            {
+              "name": "Taiwan Semiconductor Manufactur",
+              "source": "yfinance_us",
+              "symbol": "TSM"
+            },
+            {
+              "name": "Vanguard S&P 500 ETF",
+              "source": "yfinance_us",
+              "symbol": "VOO"
+            },
+            {
+              "name": "Vanguard Div Appreciation ETF",
+              "source": "yfinance_us",
+              "symbol": "VIG"
+            },
+            {
+              "name": "Advanced Micro Devices, Inc.",
+              "source": "yfinance_us",
+              "symbol": "AMD"
+            },
+            {
+              "name": "Applied Materials, Inc.",
+              "source": "yfinance_us",
+              "symbol": "AMAT"
+            },
+            {
+              "name": "Meta Platforms, Inc.",
+              "source": "yfinance_us",
+              "symbol": "META"
+            },
+            {
+              "name": "Netflix, Inc.",
+              "source": "yfinance_us",
+              "symbol": "NFLX"
+            },
+            {
+              "name": "Salesforce, Inc.",
+              "source": "yfinance_us",
+              "symbol": "CRM"
+            },
+            {
+              "name": "Synopsys, Inc.",
+              "source": "yfinance_us",
+              "symbol": "SNPS"
+            },
+            {
+              "name": "Berkshire Hathaway Inc. New",
+              "source": "yfinance_us",
+              "symbol": "BRK-B"
+            },
+            {
+              "name": "JP Morgan Chase & Co.",
+              "source": "yfinance_us",
+              "symbol": "JPM"
+            }
+          ],
+          "name": "stocks"
+        }
+      ]
+    },
+    "NSE India": {
+      "sections": [
+        {
+          "collapsed": true,
+          "items": [
+            {
+              "name": "NIFTY 50",
+              "source": "yfinance",
+              "symbol": "^NSEI"
+            },
+            {
+              "name": "NIFTY BANK",
+              "source": "yfinance",
+              "symbol": "^NSEBANK"
+            },
+            {
+              "name": "NIFTY PVT BANK",
+              "source": "yfinance",
+              "symbol": "NIFTY_PVT_BANK.NS"
+            },
+            {
+              "name": "NIFTY FIN SERVICE",
+              "source": "yfinance",
+              "symbol": "NIFTY_FIN_SERVICE.NS"
+            },
+            {
+              "name": "Nifty IT",
+              "source": "yfinance",
+              "symbol": "^CNXIT"
+            },
+            {
+              "name": "Nifty Auto",
+              "source": "yfinance",
+              "symbol": "^CNXAUTO"
+            },
+            {
+              "name": "Nifty Pharma",
+              "source": "yfinance",
+              "symbol": "^CNXPHARMA"
+            },
+            {
+              "name": "NIFTY HEALTHCARE",
+              "source": "yfinance",
+              "symbol": "NIFTY_HEALTHCARE.NS"
+            },
+            {
+              "name": "Nifty FMCG",
+              "source": "yfinance",
+              "symbol": "^CNXFMCG"
+            },
+            {
+              "name": "Nifty Metal",
+              "source": "yfinance",
+              "symbol": "^CNXMETAL"
+            },
+            {
+              "name": "NIFTY ENERGY",
+              "source": "yfinance",
+              "symbol": "^CNXENERGY"
+            },
+            {
+              "name": "NIFTY REALTY",
+              "source": "yfinance",
+              "symbol": "^CNXREALTY"
+            },
+            {
+              "name": "NIFTY INFRA",
+              "source": "yfinance",
+              "symbol": "^CNXINFRA"
+            },
+            {
+              "name": "INDIA VIX",
+              "source": "yfinance",
+              "symbol": "^INDIAVIX"
+            }
+          ],
+          "name": "index & sectors"
+        },
+        {
+          "collapsed": false,
+          "items": [
+            {
+              "name": "WIPRO LTD",
+              "source": "yfinance",
+              "symbol": "WIPRO.NS"
+            },
+            {
+              "name": "HDFC BANK LTD",
+              "source": "yfinance",
+              "symbol": "HDFCBANK.NS"
+            }
+          ],
+          "name": "stocks"
+        }
+      ]
+    },
+    "Crypto": {
+      "sections": [
+        {
+          "collapsed": false,
+          "items": [
+            {
+              "name": "BTC",
+              "source": "hyperliquid",
+              "symbol": "BTC"
+            },
+            {
+              "name": "ETH",
+              "source": "hyperliquid",
+              "symbol": "ETH"
+            },
+            {
+              "name": "SOL",
+              "source": "hyperliquid",
+              "symbol": "SOL"
+            },
+            {
+              "name": "AVAX",
+              "source": "hyperliquid",
+              "symbol": "AVAX"
+            },
+            {
+              "name": "SAND",
+              "source": "hyperliquid",
+              "symbol": "SAND"
+            },
+            {
+              "name": "ADA",
+              "source": "hyperliquid",
+              "symbol": "ADA"
+            }
+          ],
+          "name": "MAJOR"
+        },
+        {
+          "collapsed": false,
+          "items": [],
+          "name": "ALTCOINS"
+        }
+      ]
+    },
+    "Global": {
+      "sections": [
+        {
+          "collapsed": false,
+          "items": [
+            {
+              "name": "Gold Aug 26",
+              "source": "yfinance_us",
+              "symbol": "GC=F"
+            },
+            {
+              "name": "Crude Oil Aug 26",
+              "source": "yfinance_us",
+              "symbol": "CL=F"
+            },
+            {
+              "name": "Silver Sep 26",
+              "source": "yfinance_us",
+              "symbol": "SI=F"
+            },
+            {
+              "name": "Natural Gas Aug 26",
+              "source": "yfinance_us",
+              "symbol": "NG=F"
+            }
+          ],
+          "name": "commodity"
+        },
+        {
+          "collapsed": false,
+          "items": [
+            {
+              "name": "ICE US Dollar Index - Index - C",
+              "source": "yfinance_us",
+              "symbol": "DX-Y.NYB"
+            },
+            {
+              "name": "EUR/INR",
+              "source": "yfinance_us",
+              "symbol": "EURINR=X"
+            },
+            {
+              "name": "USD/INR",
+              "source": "yfinance_us",
+              "symbol": "INR=X"
+            },
+            {
+              "name": "EUR/USD",
+              "source": "yfinance_us",
+              "symbol": "EURUSD=X"
+            },
+            {
+              "name": "USD/JPY",
+              "source": "yfinance_us",
+              "symbol": "JPY=X"
+            },
+            {
+              "name": "GBP/USD",
+              "source": "yfinance_us",
+              "symbol": "GBPUSD=X"
+            },
+            {
+              "name": "USD/CHF",
+              "source": "yfinance_us",
+              "symbol": "CHF=X"
+            }
+          ],
+          "name": "Forex"
+        }
+      ]
+    }
+  }
+}

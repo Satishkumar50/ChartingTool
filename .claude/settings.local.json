@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:5000/api/symbols?source=hyperliquid\" -UseBasicParsing)",
+      "PowerShell(Invoke-WebRequest \"http://localhost:5000/\" -UseBasicParsing)",
+      "PowerShell(Start-Process \"http://localhost:5000\")",
+      "PowerShell($sw = [System.Diagnostics.Stopwatch]::StartNew\\(\\); $r = Invoke-WebRequest -Uri \"http://localhost:5000/api/history?symbol=BTC&interval=1m&period=1d&source=hyperliquid\" -TimeoutSec 30 -UseBasicParsing; $j = $r.Content | ConvertFrom-Json; [PSCustomObject]@{ok=$j.ok; candle_count=$j.data.Count; elapsed_ms=$sw.ElapsedMilliseconds; first_time=$j.data[0].time; last_time=$j.data[-1].time})"
+    ]
+  }
+}

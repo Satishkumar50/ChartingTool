@@ -1,0 +1,94 @@
+{
+  "Intra MT": {
+    "chartCount": 4,
+    "theme": "light",
+    "panes": [
+      {
+        "source": "yfinance_us",
+        "symbol": "MU",
+        "interval": "5m",
+        "indicators": {
+          "RSI": false,
+          "VOLUME": true,
+          "ATR": false,
+          "FVG": false,
+          "VOL_PROFILE": false,
+          "OB": false,
+          "PIVOT": true,
+          "SMA20": false,
+          "SMA50": false,
+          "SMA200": false,
+          "EMA20": true,
+          "EMA50": true,
+          "EMA200": true,
+          "VWAP": false,
+          "BB": false,
+          "OBV": false
+        }
+      },
+      {
+        "source": "yfinance_us",
+        "symbol": "MU",
+        "interval": "1m",
+        "indicators": {
+          "RSI": false,
+          "VOLUME": false,
+          "ATR": false,
+          "FVG": false,
+          "VOL_PROFILE": false,
+          "OB": false,
+          "PIVOT": true,
+          "SMA20": false,
+          "SMA50": false,
+          "SMA200": false,
+          "EMA20": true,
+          "EMA50": true,
+          "EMA200": false,
+          "VWAP": true
+        }
+      },
+      {
+        "source": "yfinance_us",
+        "symbol": "MU",
+        "interval": "15m",
+        "indicators": {
+          "RSI": false,
+          "VOLUME": false,
+          "ATR": false,
+          "FVG": false,
+          "VOL_PROFILE": false,
+          "OB": false,
+          "PIVOT": true,
+          "SMA20": false,
+          "SMA50": false,
+          "SMA200": false,
+          "EMA20": true,
+          "EMA50": true,
+          "EMA200": false,
+          "VWAP": true
+        }
+      },
+      {
+        "source": "yfinance_us",
+        "symbol": "MU",
+        "interval": "1D",
+        "indicators": {
+          "RSI": false,
+          "VOLUME": false,
+          "ATR": false,
+          "FVG": false,
+          "VOL_PROFILE": false,
+          "OB": false,
+          "PIVOT": true,
+          "SMA20": false,
+          "SMA50": false,
+          "SMA200": false,
+          "EMA20": true,
+          "EMA50": true,
+          "EMA200": false,
+          "VWAP": true
+        }
+      }
+    ]
+  }
+}

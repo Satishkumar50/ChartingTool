@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-Timeframe Charts</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header id="top-bar">
+
+      <!-- Logo -->
+      <div id="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#388bfd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+        <span>Multi-Timeframe Charts</span>
+      </div>
+
+      <!-- Chart count -->
+      <div id="count-control">
+        <span class="ctrl-label">Charts</span>
+        <div id="count-btns">
+          <button class="count-btn" data-count="1">1</button>
+          <button class="count-btn" data-count="2">2</button>
+          <button class="count-btn" data-count="4">4</button>
+          <button class="count-btn" data-count="6">6</button>
+          <button class="count-btn" data-count="8">8</button>
+        </div>
+      </div>
+
+      <!-- Watchlist toggle -->
+      <button id="wl-open-btn" class="top-icon-btn" title="Toggle Watchlist (W)">
+        &#9776; Watchlist
+      </button>
+
+      <!-- Apply-to-all -->
+      <div id="apply-group">
+        <span class="ctrl-label">Apply:</span>
+        <button id="apply-sym-btn" class="apply-btn" title="Apply active pane symbol to all charts">Symbol</button>
+        <button id="apply-tf-btn"  class="apply-btn" title="Apply active pane timeframe to all charts">TF</button>
+        <button id="apply-src-btn" class="apply-btn" title="Apply active pane source to all charts">Source</button>
+        <button id="apply-ind-btn" class="apply-btn" title="Apply active pane indicators to all charts">Ind</button>
+      </div>
+
+      <!-- Workspace controls -->
+      <div id="workspace-controls">
+        <select id="ws-select" title="Load workspace"></select>
+        <button id="ws-save-btn" class="ws-btn" title="Save current layout as workspace">Save</button>
+        <button id="ws-del-btn"  class="ws-btn" title="Delete selected workspace">Del</button>
+      </div>
+
+      <!-- Market status -->
+      <div id="market-status">
+        <div class="mkt-item" id="nse-lbl" title="NSE India">
+          <span class="mkt-dot mkt-closed" id="nse-dot"></span>
+          <span>NSE</span>
+        </div>
+        <div class="mkt-item" id="us-lbl" title="US Market">
+          <span class="mkt-dot mkt-closed" id="us-dot"></span>
+          <span>US</span>
+        </div>
+        <div class="mkt-item" title="Crypto 24/7">
+          <span class="mkt-dot mkt-open"></span>
+          <span>Crypto</span>
+        </div>
+      </div>
+
+      <!-- WS connection status -->
+      <div id="ws-status">
+        <span class="status-dot" id="hl-dot"></span>
+        <span id="hl-label">Hyperliquid WS</span>
+      </div>
+
+      <!-- Drawing tools toggle -->
+      <button id="draw-toolbar-btn" class="top-icon-btn" title="Drawing Tools">&#9998; Draw</button>
+
+      <!-- MTF RSI toggle -->
+      <button id="mtf-rsi-btn" class="top-icon-btn" title="Multi-Timeframe RSI">&#9636; MTF RSI</button>
+
+      <!-- Alerts button -->
+      <button id="alerts-btn" class="top-icon-btn" title="Price Alerts">&#9889; Alerts</button>
+
+      <!-- Binance account settings -->
+      <button id="bn-settings-btn" class="top-icon-btn" title="Binance Account Settings">&#9881; Binance</button>
+
+      <!-- Theme toggle -->
+      <button id="theme-btn" title="Toggle light / dark mode" aria-label="Toggle theme">
+        <svg id="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1"  x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1"  y1="12" x2="3"  y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg id="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+
+    </header>
+
+    <!-- Content: watchlist panel + chart grid -->
+    <div id="content-area">
+
+      <!-- Collapsible watchlist (hidden by default, opens via .wl-open) -->
+      <div id="watchlist-panel">
+        <div id="wl-header">
+          <span>Watchlist</span><span id="wl-save-dot" title="Saved"></span>
+          <div class="wl-header-actions">
+            <button id="wl-import-btn" title="Import CSV">
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="9" width="10" height="3.5" rx="1"/>
+                <polyline points="4.5,5.5 7,8 9.5,5.5"/>
+                <line x1="7" y1="1.5" x2="7" y2="8"/>
+              </svg>
+            </button>
+            <button id="wl-export-btn" title="Export CSV">
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="9" width="10" height="3.5" rx="1"/>
+                <polyline points="4.5,4.5 7,2 9.5,4.5"/>
+                <line x1="7" y1="2" x2="7" y2="8.5"/>
+              </svg>
+            </button>
+            <button id="wl-toggle-btn" title="Close watchlist">&#9664;</button>
+          </div>
+        </div>
+        <input type="text" id="wl-search-input" placeholder="Search to add symbol..." autocomplete="off" />
+        <div id="watchlist-items"></div>
+      </div>
+      <input type="file" id="wl-file-input" accept=".csv" style="display:none">
+
+      <main id="chart-grid"></main>
+    </div>
+  </div>
+
+  <!-- Watchlist import mode modal -->
+  <div class="modal-overlay" id="wl-import-modal">
+    <div class="modal-box" style="max-width:360px">
+      <div class="modal-title">
+        <span>Import Watchlist</span>
+        <button class="modal-close" id="wl-import-cancel">&#215;</button>
+      </div>
+      <p id="wl-import-summary" style="font-size:13px;margin:12px 0;color:var(--text)"></p>
+      <div style="display:flex;gap:8px;justify-content:flex-end">
+        <button id="wl-import-add-btn"     class="apply-btn">Add to existing</button>
+        <button id="wl-import-replace-btn" class="apply-btn">Replace all</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alerts modal -->
+  <div class="modal-overlay" id="alerts-modal">
+    <div class="modal-box">
+      <div class="modal-title">
+        <span>Price Alerts</span>
+        <button class="modal-close" id="alerts-close-btn">&#215;</button>
+      </div>
+      <div class="alert-form">
+        <input  type="text"   id="alert-sym"   placeholder="Symbol" autocomplete="off" />
+        <select id="alert-src">
+          <option value="hyperliquid">Crypto</option>
+          <option value="yfinance">India NSE</option>
+          <option value="yfinance_us">US / Other</option>
+        </select>
+        <select id="alert-cond">
+          <option value="above">Above &#9650;</option>
+          <option value="below">Below &#9660;</option>
+        </select>
+        <input  type="number" id="alert-price" placeholder="Price" step="any" />
+        <button id="alert-add-btn">+ Add Alert</button>
+      </div>
+      <div id="alerts-list"></div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="alert-toast" id="alert-toast"></div>
+
+  <!-- Binance credentials modal -->
+  <div class="modal-overlay" id="bn-settings-modal">
+    <div class="modal-box">
+      <div class="modal-title">
+        <span>Binance Account Settings</span>
+        <button class="modal-close" id="bn-settings-close">&#215;</button>
+      </div>
+      <p class="bn-info">
+        Chart data and live prices work without an API key (Binance public API).
+        Your key is only needed for personal account features (balances, orders) in future updates.
+      </p>
+      <div class="bn-form">
+        <label for="bn-api-key">API Key</label>
+        <input type="text"     id="bn-api-key"    placeholder="Paste your Binance API key..." autocomplete="off" />
+        <label for="bn-api-secret">API Secret</label>
+        <input type="password" id="bn-api-secret" placeholder="Paste your API secret..." autocomplete="off" />
+        <div class="bn-form-actions">
+          <button id="bn-save-btn">Save Credentials</button>
+          <button id="bn-clear-btn">Clear</button>
+        </div>
+        <div id="bn-status-msg"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawing toolbar floating panel -->
+  <div id="draw-toolbar"></div>
+
+  <!-- MTF RSI floating panel -->
+  <div id="mtf-rsi-panel">
+    <div class="mtf-hd">
+      <span class="mtf-hd-title">MTF RSI (14)</span>
+      <span id="mtf-rsi-sym" class="mtf-hd-sym">—</span>
+      <span class="mtf-live-dot"></span>
+      <button id="mtf-rsi-close" class="mtf-hd-close" title="Close">&#215;</button>
+    </div>
+    <div id="mtf-rsi-body">
+      <div class="mtf-col-hd">
+        <span>TF</span><span>RSI</span><span>Status</span>
+      </div>
+      <div id="mtf-rsi-rows"></div>
+    </div>
+  </div>
+
+  <!-- Lightweight Charts v4 -->
+  <script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+
+  <!-- Feature modules (order matters) -->
+  <script src="/js/hl-ws.js"></script>
+  <script src="/js/binance-ws.js"></script>
+  <script src="/js/sync.js"></script>
+  <script src="/js/indicators.js"></script>
+  <script src="/js/draw-tools.js"></script>
+  <script src="/js/draw-engine.js"></script>
+  <script src="/js/draw-toolbar.js"></script>
+  <script src="/js/chart-pane.js"></script>
+  <script src="/js/workspaces.js"></script>
+  <script src="/js/watchlist.js"></script>
+  <script src="/js/alerts.js"></script>
+  <script src="/js/shortcuts.js"></script>
+  <script src="/js/mtf-rsi.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
